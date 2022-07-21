@@ -34,13 +34,31 @@ var Employee = /** @class */ (function (_super) {
         _this.middleName = middleName;
         return _this;
     }
+    Object.defineProperty(Employee.prototype, "employeeId", {
+        get: function () {
+            return this.id;
+        },
+        set: function (employeeId) {
+            this.id = employeeId;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Employee.prototype.getFullName = function () {
-        var nameSegments = _super.prototype.getFullName.call(this).split(' ');
-        nameSegments.splice(1, 0, this.middleName);
-        var fullName = nameSegments.join(' ');
-        return "".concat(fullName);
+        //* If using data modifier - protected 
+        //* const nameSegments: Array<string> = super.getFullName().split(' ');
+        //* nameSegments.splice(1, 0, this.middleName);
+        //* const fullName = nameSegments.join(' ');
+        //* return `${fullName}`;
+        //* using protected - can reach all the classes normally
+        return "".concat(this.firstName, " ").concat(this.middleName, " ").concat(this.lastName);
     };
     return Employee;
 }(Person));
 var manager = new Employee(1, 'Middle', 'John', 'Last', 25);
 console.log("".concat(manager.getFullName()));
+//* Get
+console.log(manager.employeeId);
+//* Set
+manager.employeeId = 20;
+console.log(manager.employeeId);

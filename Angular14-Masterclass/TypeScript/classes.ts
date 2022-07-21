@@ -1,9 +1,9 @@
 class Person {
 
     constructor(
-        private firstName: string, 
-        private lastName: string, 
-        private age: number
+        protected firstName: string, 
+        protected lastName: string, 
+        protected age: number
         ){}
 
     getFullName(): string {
@@ -18,9 +18,18 @@ console.log(person.getFullName())
 
 class Employee extends Person {
 
+    get employeeId(): number {
+        return this.id;
+    }
+
+    set employeeId(employeeId: number) {
+        this.id = employeeId;
+    }
+
+
     constructor(
-        private id: number,
-        private middleName: string,
+        protected id: number,
+        protected middleName: string,
         firstName: string, 
         lastName: string, 
         age: number
@@ -29,16 +38,25 @@ class Employee extends Person {
         }
 
         getFullName(): string {
-            const nameSegments: Array<string> = super.getFullName().split(' ');
-            nameSegments.splice(1, 0, this.middleName);
-            const fullName = nameSegments.join(' ');
-            return `${fullName}`;
+
+            //* If using data modifier - protected 
+            //* const nameSegments: Array<string> = super.getFullName().split(' ');
+            //* nameSegments.splice(1, 0, this.middleName);
+            //* const fullName = nameSegments.join(' ');
+            //* return `${fullName}`;
+
+            //* using protected - can reach all the classes normally
+            return `${this.firstName} ${this.middleName} ${this.lastName}`
     
         }
     }
 
     
-
-
-    const manager: Person = new Employee(1, 'Middle', 'John', 'Last', 25);
+    const manager: Employee = new Employee(1, 'Middle', 'John', 'Last', 25);
     console.log(`${manager.getFullName()}`)
+
+    //* Get
+    console.log(manager.employeeId);
+    //* Set
+    manager.employeeId = 20
+    console.log(manager.employeeId);
