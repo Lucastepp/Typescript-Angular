@@ -9,6 +9,8 @@ import { CoreModule } from './core/core.module';
 import { ChatComponent } from './components/chat/chat.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/users/user/user.component';
+import { StringInterpolationComponent } from './components/bindings/string-interpolation/string-interpolation.component';
+import { PropBindingComponent } from './components/bindings/prop-binding/prop-binding.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { UserComponent } from './components/users/user/user.component';
     TransformDirective,
     SafePipe,
     ChatComponent,
-    UsersComponent
+    UsersComponent,
+    StringInterpolationComponent,
+    PropBindingComponent
   ],
   imports: [
     BrowserModule,
