@@ -14,6 +14,8 @@ import { PropBindingComponent } from './components/bindings/prop-binding/prop-bi
 import { EventBindingComponent } from './components/bindings/event-binding/event-binding.component';
 import { HelloComponent } from './components/hello/hello.component';
 import { CounterActionsComponent } from './components/counter-actions/counter-actions.component';
+import { FormsModule } from '@angular/forms';
+import { AttBindingComponent } from './components/bindings/att-binding/att-binding.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { CounterActionsComponent } from './components/counter-actions/counter-ac
     PropBindingComponent,
     EventBindingComponent,
     HelloComponent,
-    CounterActionsComponent
+    CounterActionsComponent,
+    AttBindingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
