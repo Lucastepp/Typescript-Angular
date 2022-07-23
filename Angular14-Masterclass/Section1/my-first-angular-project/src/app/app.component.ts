@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-first-angular-project';
+  title = 'Angular 14';
+  counter = 0;
+  classToSet = 'positive';
+
+  onCounterChange(buttonType: any) {
+    buttonType === 'INC' ? this.counter++ : this.counter--;
+    this.classToSet = this.counter >= 0 ? 'positive' : 'negative';
+  }
 }

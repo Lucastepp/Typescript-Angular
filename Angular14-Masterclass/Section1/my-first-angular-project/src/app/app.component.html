@@ -12,3 +12,14 @@
 <div class="styled">
   <app-event-binding></app-event-binding>
 </div>
+
+
+  
+  <h1>@input</h1>
+  <app-hello [name]="title"></app-hello>
+  <hr>
+
+  <h1>@output</h1>
+  <h4>Current value of the Counter is <span [class]="'classToSet'">{{ counter }}</span></h4>
+  <app-counter-actions (counterChange)="onCounterChange($event)"></app-counter-actions>
+

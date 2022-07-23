@@ -12,6 +12,8 @@ import { UserComponent } from './components/users/user/user.component';
 import { StringInterpolationComponent } from './components/bindings/string-interpolation/string-interpolation.component';
 import { PropBindingComponent } from './components/bindings/prop-binding/prop-binding.component';
 import { EventBindingComponent } from './components/bindings/event-binding/event-binding.component';
+import { HelloComponent } from './components/hello/hello.component';
+import { CounterActionsComponent } from './components/counter-actions/counter-actions.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { EventBindingComponent } from './components/bindings/event-binding/event
     UsersComponent,
     StringInterpolationComponent,
     PropBindingComponent,
-    EventBindingComponent
+    EventBindingComponent,
+    HelloComponent,
+    CounterActionsComponent
   ],
   imports: [
     BrowserModule,
