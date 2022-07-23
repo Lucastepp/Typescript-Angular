@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-counter-actions',
@@ -7,7 +7,8 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 })
 export class CounterActionsComponent implements OnInit {
 
-  counterChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() counterChange: EventEmitter<string> = new EventEmitter<string>();
+  
   constructor() {}
 
   ngOnInit(): void {
