@@ -11,6 +11,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/users/user/user.component';
 import { StringInterpolationComponent } from './components/bindings/string-interpolation/string-interpolation.component';
 import { PropBindingComponent } from './components/bindings/prop-binding/prop-binding.component';
+import { EventBindingComponent } from './components/bindings/event-binding/event-binding.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PropBindingComponent } from './components/bindings/prop-binding/prop-bi
     ChatComponent,
     UsersComponent,
     StringInterpolationComponent,
-    PropBindingComponent
+    PropBindingComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule,
