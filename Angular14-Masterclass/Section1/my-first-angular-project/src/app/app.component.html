@@ -18,17 +18,21 @@
   <app-hello [name]="title"></app-hello>
   <hr>  -->
 
-  <!-- <h1>@Output</h1>
+  <h1>@Output</h1>
   <h4>Current value of the Counter is <span [class]="classToSet">{{ counter }}</span></h4>
   <app-counter-actions 
   [(counter)]="counter">
-</app-counter-actions> -->
+</app-counter-actions> 
 
 <hr>
 
-<!-- <input type="text" [(ngModel)]="title">
-<h3>{{ title }}</h3> -->
+ <input type="text" [(ngModel)]="title">
+<h3>{{ title }}</h3> 
 
 <div class="styled">
   <app-att-binding></app-att-binding>
+</div>
+
+<div>
+  <app-class-binding></app-class-binding>
 </div>

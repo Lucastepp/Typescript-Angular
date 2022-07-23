@@ -1,9 +1,9 @@
 <table [border]="1">
     <tr>
-        <td colspan="numbers.length">One-Two</td>
+        <td [attr.colspan]="numbers.length">One-Two</td>
     </tr>
     <tr>
-        <td colspan="2">Three-Four</td>
+        <td [colSpan]="numbers.length">Three-Four</td>
     </tr>
     <tr>
         <td>Five</td>
@@ -11,4 +11,4 @@
     </tr>
 </table>
 <br>
- <button>{{ actionName }} with Aria</button> 
+ <button [attr.aria-label]="actionName">{{ actionName }} with Aria</button> 

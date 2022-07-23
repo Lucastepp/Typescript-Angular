@@ -16,6 +16,7 @@ import { HelloComponent } from './components/hello/hello.component';
 import { CounterActionsComponent } from './components/counter-actions/counter-actions.component';
 import { FormsModule } from '@angular/forms';
 import { AttBindingComponent } from './components/bindings/att-binding/att-binding.component';
+import { ClassBindingComponent } from './components/bindings/class-binding/class-binding.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AttBindingComponent } from './components/bindings/att-binding/att-bindi
     EventBindingComponent,
     HelloComponent,
     CounterActionsComponent,
-    AttBindingComponent
+    AttBindingComponent,
+    ClassBindingComponent
   ],
   imports: [
     BrowserModule,
