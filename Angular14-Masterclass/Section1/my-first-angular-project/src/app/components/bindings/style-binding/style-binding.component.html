@@ -1,0 +1,19 @@
+<h2>Style Binding Example</h2>
+<button 
+    [style.color]="isValid ? 'green': 'red'"
+    (click)="isValid = !isValid">
+    Color would be green of Red Conditionally    
+</button>
+<hr>
+<div>
+    Background color would be yellow
+</div>
+<hr>
+<div>
+    Background color would be red 
+    And font weight would be bold
+</div>
+<hr>
+<div>
+    Font size in %
+</div>
