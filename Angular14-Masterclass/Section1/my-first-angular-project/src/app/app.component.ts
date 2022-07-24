@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  
+
   title = 'my-first-angular-project';
   counter = 0;
   classToSet = 'positive';

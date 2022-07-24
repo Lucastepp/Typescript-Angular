@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { AttBindingComponent } from './components/bindings/att-binding/att-binding.component';
 import { ClassBindingComponent } from './components/bindings/class-binding/class-binding.component';
 import { StyleBindingComponent } from './components/bindings/style-binding/style-binding.component';
+import { NoteListComponent } from './components/note-list/note-list.component';
+import { NoteListItemComponent } from './components/note-list-item/note-list-item.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { StyleBindingComponent } from './components/bindings/style-binding/style
     CounterActionsComponent,
     AttBindingComponent,
     ClassBindingComponent,
-    StyleBindingComponent
+    StyleBindingComponent,
+    NoteListComponent,
+    NoteListItemComponent
   ],
   imports: [
     BrowserModule,
