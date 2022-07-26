@@ -10,6 +10,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { UsersComponent } from './components/users/users.component';
+import { UsersDetailsComponent } from './components/users-details/users-details.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { UsersComponent } from './components/users/users.component';
     AboutComponent,
     BlogComponent,
     HeaderComponent,
-    UsersComponent
+    UsersComponent,
+    UsersDetailsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
