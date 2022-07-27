@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { UsersComponent } from './components/users/users.component';
 import { UsersDetailsComponent } from './components/users-details/users-details.component';
 import { UserComponent } from './components/user/user.component';
+import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserComponent } from './components/user/user.component';
     HeaderComponent,
     UsersComponent,
     UsersDetailsComponent,
-    UserComponent
+    UserComponent,
+    PlaceholderComponent
   ],
   imports: [
     BrowserModule,
