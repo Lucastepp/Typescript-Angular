@@ -1,5 +1,5 @@
-<div>
-    <div class="container">
+<div class="container">
+    <div class="row">
         <div class="col-md-4">
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let user of users">
@@ -7,8 +7,9 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="col-md-8">
-        <app-user-details></app-user-details>
+
+        <div class="col-md-8">
+            <app-users-details></app-users-details>
+        </div>
     </div>
 </div>
