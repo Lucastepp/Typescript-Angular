@@ -26,6 +26,8 @@ export class UsersDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.user = this.users.filter((user) => user.id === +params['id'])[0];
     })
+
+    this.activatedRoute.queryParams.subscribe((qs) => console.log('Got the QS as: ', qs))
   }
 
 }
