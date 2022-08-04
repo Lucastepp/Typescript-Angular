@@ -7,6 +7,7 @@ import { HomeComponent } from '../components/home/home.component';
 import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
 import { UsersDetailsComponent } from '../components/users-details/users-details.component';
 import { UsersComponent } from '../components/users/users.component';
+import { AuthGuard } from '../guards/auth/auth.guard';
 
 
 export const appRoutes: Routes = [
@@ -21,6 +22,7 @@ export const appRoutes: Routes = [
 ]
 
 @NgModule({
+  providers: [ AuthGuard ],
   declarations: [],
   imports: [
     CommonModule,
