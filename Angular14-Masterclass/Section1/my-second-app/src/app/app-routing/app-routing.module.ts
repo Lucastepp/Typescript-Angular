@@ -8,6 +8,7 @@ import { PlaceholderComponent } from '../components/placeholder/placeholder.comp
 import { UsersDetailsComponent } from '../components/users-details/users-details.component';
 import { UsersComponent } from '../components/users/users.component';
 import { AuthGuard } from '../guards/auth/auth.guard';
+import { ConfirmationGuard } from '../guards/confirmation/confirmation.guard';
 
 
 export const appRoutes: Routes = [
@@ -16,7 +17,7 @@ export const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'users', 
     component: UsersComponent, 
-    canActivateChild: [ AuthGuard ],
+    canDeactivate: [ ConfirmationGuard ],
     children: [
       { path: ':id', component: UsersDetailsComponent},
       //{ path: '', component: PlaceholderComponent }
@@ -25,7 +26,7 @@ export const appRoutes: Routes = [
 ]
 
 @NgModule({
-  providers: [ AuthGuard ],
+  providers: [ AuthGuard, ConfirmationGuard ],
   declarations: [],
   imports: [
     CommonModule,

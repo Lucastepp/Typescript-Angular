@@ -13,6 +13,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UsersDetailsComponent } from './components/users-details/users-details.component';
 import { UserComponent } from './components/user/user.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
     RouterModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
