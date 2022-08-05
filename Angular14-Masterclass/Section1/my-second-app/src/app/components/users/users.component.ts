@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IUser } from 'src/app/interfaces/user';
 import { canComponentDeactivate } from '../../guards/confirmation/confirmation.guard'
 
 @Component({
@@ -6,20 +8,19 @@ import { canComponentDeactivate } from '../../guards/confirmation/confirmation.g
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent implements canComponentDeactivate {
+export class UsersComponent implements canComponentDeactivate, OnInit {
 
 
+  users: Array<IUser> = []
 
-  users: Array<{ id: number, name: string, email: string }> = [
-    { id: 1, name: 'John Doe', email: 'john@gmail.com' },
-    { id: 2, name: 'Jacob Riglin', email: 'JRiglin@gmail.com' },
-    { id: 3, name: 'Tom Jauncey', email: 'Tom23@gmail.com' },
-    { id: 4, name: 'Jeremy Jauncey', email: 'Jeremyaa34@gmail.com' },
-    { id: 5, name: 'Sam Kodler', email: 'Kodler311@gmail.com' },
-    { id: 6, name: 'Jordan Taylor', email: 'Jo-ay@gmail.com' },
-    { id: 7, name: 'Peter Smith', email: 'Pet777@gmail.com' },
-  ]
+  constructor(private activatedRoute: ActivatedRoute) {}
 
+  ngOnInit() {
+    //this.users = this.UserService.getUsers();
+
+    this.activatedRoute.data.forEach(data => this.users = data['users']);
+  }
+ 
   confirm() {
     return confirm('Are you sure you want to navigate away?')
   }
