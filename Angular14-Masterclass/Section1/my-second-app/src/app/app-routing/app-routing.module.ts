@@ -9,15 +9,21 @@ import { UsersDetailsComponent } from '../components/users-details/users-details
 import { UsersComponent } from '../components/users/users.component';
 import { AuthGuard } from '../guards/auth/auth.guard';
 import { ConfirmationGuard } from '../guards/confirmation/confirmation.guard';
+import { UsersResolveGuard } from '../guards/UsersResolve/users-resolve.guard';
+import { UserService } from '../services/user/user.service';
 
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogComponent, canActivate: [ AuthGuard ] },
   { path: 'about', component: AboutComponent },
-  { path: 'users', 
+  { 
+    path: 'users', 
     component: UsersComponent, 
     canDeactivate: [ ConfirmationGuard ],
+    resolve: {
+      users: UsersResolveGuard
+    },
     children: [
       { path: ':id', component: UsersDetailsComponent},
       //{ path: '', component: PlaceholderComponent }
@@ -26,7 +32,7 @@ export const appRoutes: Routes = [
 ]
 
 @NgModule({
-  providers: [ AuthGuard, ConfirmationGuard ],
+  providers: [ AuthGuard, ConfirmationGuard, UserService, UsersResolveGuard ],
   declarations: [],
   imports: [
     CommonModule,
