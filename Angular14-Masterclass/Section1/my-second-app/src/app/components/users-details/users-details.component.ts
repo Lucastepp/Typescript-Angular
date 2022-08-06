@@ -22,14 +22,30 @@ export class UsersDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.activatedRoute.params.subscribe(params => {
-    
-        this.userService.getUserByIdViaREST(+params['id']).subscribe(
-          user => this.user = user,
-          err => console.log('Got an error while fetching the user details', err),
-          () => alert('Fetch of User Details Completed') 
-        )
-      })
-    
+
+      this.userService.getUserByIdViaREST(+params['id']).subscribe(
+        user => this.user = user,
+        err => console.log('Got an error while fetching the user details', err),
+        () => alert('Fetch of User Details Completed')
+      )
+    })
+
+  }
+
+  createUser() {
+
+  }
+
+  updateUser() {
+
+  }
+
+  deleteUser() {
+
+  }
+
+  getUserPosts() {
+
   }
 
 }
