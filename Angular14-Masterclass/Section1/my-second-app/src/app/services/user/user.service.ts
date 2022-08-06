@@ -11,7 +11,7 @@ export class UserService {
 
   private _rootUrl: string = 'https://jsonplaceholder.typicode.com/users'
 
-  private users: IUser[] = [
+  private _users: IUser[] = [
     { id: 1, name: 'John Doe', email: 'john@gmail.com' },
     { id: 2, name: 'Jacob Riglin', email: 'JRiglin@gmail.com' },
     { id: 3, name: 'Tom Jauncey', email: 'Tom23@gmail.com' },
@@ -24,11 +24,19 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUsers(): IUser[] {
-    return this.users;
+    return this._users;
   }
 
   getUsersViaREST(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this._rootUrl)
+  }
+
+  getUsersById(id: number): IUser {
+    return this._users.filter(user => user.id === id)[0];
+  }
+
+  getUserByIdViaREST(id: number): Observable<IUser> {
+    return this.http.get<IUser>(`${this._rootUrl}/${id}`)
   }
 
 }
