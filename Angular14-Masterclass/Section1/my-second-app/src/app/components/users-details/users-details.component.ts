@@ -10,21 +10,26 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class UsersDetailsComponent implements OnInit {
 
-  user: any;
+  user!: IUser;
 
   users: Array<IUser> = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private userService: UserService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
 
-    this.users = this.userService.getUsers();
-
-    this.activatedRoute.params.subscribe((params) => {
-      this.user = this.users.filter((user) => user.id === +params['id'])[0];
-    })
-
-    this.activatedRoute.queryParams.subscribe((qs) => console.log('Got the QS as: ', qs))
+    this.activatedRoute.params.subscribe(params => {
+    
+        this.userService.getUserByIdViaREST(+params['id']).subscribe(
+          user => this.user = user,
+          err => console.log('Got an error while fetching the user details', err),
+          () => alert('Fetch of User Details Completed') 
+        )
+      })
+    
   }
 
 }
