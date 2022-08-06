@@ -1,5 +1,31 @@
-export interface IUser {
-    id: number; 
+
+interface IAdress {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: IGeo;
+}
+
+interface IGeo {
+    lat: string;
+    lng: string;
+}
+
+interface ICompany {
     name: string;
-    email: string; 
+    catchPhrase: string;
+    bs: string;
+}
+
+
+export interface IUser {
+    id: number;
+    name: string;
+    username?: string;
+    email: string;
+    address?: IAdress;
+    phone?: string;
+    website?: string;
+    company?: ICompany;
 }
