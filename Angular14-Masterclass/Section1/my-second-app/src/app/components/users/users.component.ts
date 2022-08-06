@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IUser } from 'src/app/interfaces/user';
+import { UserService } from 'src/app/services/user/user.service';
 import { canComponentDeactivate } from '../../guards/confirmation/confirmation.guard'
 
 @Component({
@@ -11,14 +12,19 @@ import { canComponentDeactivate } from '../../guards/confirmation/confirmation.g
 export class UsersComponent implements canComponentDeactivate, OnInit {
 
 
-  users: Array<IUser> = []
+  users: IUser[] = [];
+  
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     //this.users = this.UserService.getUsers();
 
-    this.activatedRoute.data.forEach(data => this.users = data['users']);
+    this.userService.getUsersViaREST().subscribe(
+         users => this.users = users
+    )
+
+    //this.activatedRoute.data.forEach(data => this.users = data['users']);
   }
  
   confirm() {

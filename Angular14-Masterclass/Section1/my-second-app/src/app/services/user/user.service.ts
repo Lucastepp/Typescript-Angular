@@ -1,10 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TitleStrategy } from '@angular/router';
+import { Observable } from 'rxjs';
 import { IUser } from 'src/app/interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  private _rootUrl: string = 'https://jsonplaceholder.typicode.com/users'
 
   private users: IUser[] = [
     { id: 1, name: 'John Doe', email: 'john@gmail.com' },
@@ -16,10 +21,14 @@ export class UserService {
     { id: 7, name: 'Peter Smith', email: 'Pet777@gmail.com' },
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getUsers(): IUser[] {
     return this.users;
+  }
+
+  getUsersViaREST(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(this._rootUrl)
   }
 
 }

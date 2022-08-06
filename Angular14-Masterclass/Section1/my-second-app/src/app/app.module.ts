@@ -14,6 +14,7 @@ import { UsersDetailsComponent } from './components/users-details/users-details.
 import { UserComponent } from './components/user/user.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { UserService } from './services/user/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { UserService } from './services/user/user.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     RouterModule,
     FormsModule
