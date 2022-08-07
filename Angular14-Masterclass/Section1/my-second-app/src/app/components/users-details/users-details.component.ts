@@ -64,7 +64,7 @@ export class UsersDetailsComponent implements OnInit {
   }
 
   getUserPosts() {
-
+    this.posts = this.userService.getUserPosts(this.user.id);
   }
 
 }
