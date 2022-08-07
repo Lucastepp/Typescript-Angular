@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user/user.service';
 export class UsersDetailsComponent implements OnInit {
 
   user!: IUser;
+  posts: any;
 
   users: Array<IUser> = [];
 
@@ -33,14 +34,32 @@ export class UsersDetailsComponent implements OnInit {
   }
 
   createUser() {
-
+    this.userService.createUser(this.user).subscribe(
+      user => alert(`A new user was created with the id: ${user.id}`),
+      err => alert(`Got an error as: ${err}`),
+      () => alert('Creation of user completed!')
+    );
   }
 
   updateUser() {
+    this.user.name = 'Sam Kolder';
+    this.user.email = 'sam.kolder@example.com';
+    this.userService.updateUser(this.user).subscribe(
+      user => alert(`A new user was updated with the id: ${user.id}`),
+      err => alert(`Got an error as: ${err}`),
+      () => alert('Updation of user completed!')
+    );
 
   }
 
   deleteUser() {
+    this.user.name = 'Sam Kolder';
+    this.user.email = 'sam.kolder@example.com';
+    this.userService.deleteUser(this.user.id).subscribe(
+      user => alert(`The User was deleted`),
+      err => alert(`Got an error as: ${err}`),
+      () => alert('Deletion of user completed!')
+    );
 
   }
 
