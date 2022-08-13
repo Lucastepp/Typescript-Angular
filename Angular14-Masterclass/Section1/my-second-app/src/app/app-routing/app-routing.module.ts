@@ -5,6 +5,7 @@ import { AboutComponent } from '../components/about/about.component';
 import { BlogComponent } from '../components/blog/blog.component';
 import { BuiltInAttrDirComponent } from '../components/built-in-attr-dir/built-in-attr-dir.component';
 import { BuiltInStrDirComponent } from '../components/built-in-str-dir/built-in-str-dir.component';
+import { DirectiveHostComponent } from '../components/directive-host/directive-host.component';
 import { HomeComponent } from '../components/home/home.component';
 import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
 import { UsersDetailsComponent } from '../components/users-details/users-details.component';
@@ -21,6 +22,7 @@ export const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'str-dir', component: BuiltInStrDirComponent },
   { path: 'attr-dir', component: BuiltInAttrDirComponent },
+  { path: 'directives', component: DirectiveHostComponent },
   { 
     path: 'users', 
     component: UsersComponent, 

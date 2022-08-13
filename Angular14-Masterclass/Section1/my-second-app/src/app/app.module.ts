@@ -18,6 +18,8 @@ import { UserService } from './services/user/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-str-dir.component';
 import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in-attr-dir.component';
+import { ChangeCaseDirective } from './directives/changeCase/change-case.directive';
+import { DirectiveHostComponent } from './components/directive-host/directive-host.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in
     UserComponent,
     PlaceholderComponent,
     BuiltInStrDirComponent,
-    BuiltInAttrDirComponent
+    BuiltInAttrDirComponent,
+    ChangeCaseDirective,
+    DirectiveHostComponent
   ],
   imports: [
     BrowserModule,
