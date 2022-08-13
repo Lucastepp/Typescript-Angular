@@ -2,6 +2,9 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUser } from 'src/app/interfaces/user';
+import { map } from 'rxjs/operators';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +24,7 @@ export class UserService {
     { id: 7, name: 'Peter Smith', email: 'Pet777@gmail.com' },
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsers(): IUser[] {
     return this._users;
@@ -30,6 +33,15 @@ export class UserService {
   getUsersViaREST(): Observable<IUser[]> {
     let headers = new HttpHeaders().set('Authorization', 'Bearer your-access-token-here')
     return this.http.get<IUser[]>(this._rootUrl, { headers: headers })
+      .pipe(map(users => {
+        return users.map(user => {
+          return {
+            id: user.id,
+            name: user.name,
+            email: user.email
+          }
+        })
+      }))
   }
 
   getUsersById(id: number): IUser {

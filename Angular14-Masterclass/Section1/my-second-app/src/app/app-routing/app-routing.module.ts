@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { AboutComponent } from '../components/about/about.component';
 import { BlogComponent } from '../components/blog/blog.component';
+import { BuiltInStrDirComponent } from '../components/built-in-str-dir/built-in-str-dir.component';
 import { HomeComponent } from '../components/home/home.component';
 import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
 import { UsersDetailsComponent } from '../components/users-details/users-details.component';
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogComponent, canActivate: [ AuthGuard ] },
   { path: 'about', component: AboutComponent },
+  { path: 'str-dir', component: BuiltInStrDirComponent },
   { 
     path: 'users', 
     component: UsersComponent, 

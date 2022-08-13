@@ -15,6 +15,7 @@ import { UserComponent } from './components/user/user.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { UserService } from './services/user/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-str-dir.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     UsersComponent,
     UsersDetailsComponent,
     UserComponent,
-    PlaceholderComponent
+    PlaceholderComponent,
+    BuiltInStrDirComponent
   ],
   imports: [
     BrowserModule,
