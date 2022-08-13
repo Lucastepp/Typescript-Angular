@@ -17,6 +17,7 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
 import { UserService } from './services/user/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-str-dir.component';
+import { BuiltInAttrDirComponent } from './components/built-in-attr-dir/built-in-attr-dir.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BuiltInStrDirComponent } from './components/built-in-str-dir/built-in-s
     UsersDetailsComponent,
     UserComponent,
     PlaceholderComponent,
-    BuiltInStrDirComponent
+    BuiltInStrDirComponent,
+    BuiltInAttrDirComponent
   ],
   imports: [
     BrowserModule,
