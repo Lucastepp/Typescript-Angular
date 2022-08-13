@@ -1,1 +1,24 @@
-<p>built-in-str-dir works!</p>
+<hr>
+<button class="btn btn-primary" (click)="showList = !showList"> Toggle List Visibility</button>
+<hr>
+<div *ngIf="showList">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let message of messages; let i = index">
+            Index {{ i }}, Message {{ message }}
+        </li>
+    </ul>
+</div>
+
+<hr>
+
+<h4>NgSwitch</h4>
+<br>
+<input type="text" class="form-control" [(ngModel)]="alertType">
+<br>
+<div [ngSwitch]="alertType">
+    <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">Well done! You successfully la la la la</div>
+    <div *ngSwitchCase="'info'" class="alert alert-info" role="alert">Heads Up! You successfully la la la la</div>
+    <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">Warning!! You should check in on some of those fields below.</div>
+    <div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">Oh Snap! You successfully la la la la</div>
+    <div *ngSwitchDefault class="alert" role="alert">This is the default</div>
+</div>

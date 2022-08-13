@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class BuiltInStrDirComponent implements OnInit {
 
   messages!: string[];
+  showList!: boolean;
+  alertType!: string;
 
   constructor() { }
 
@@ -20,6 +22,8 @@ export class BuiltInStrDirComponent implements OnInit {
       'Message 5',
       'Message 6',
     ]
+    
+    this.showList = true;
   }
 
 }
