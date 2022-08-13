@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveHostComponent implements OnInit {
 
+  showUnless!: boolean;
+
   constructor() { 
     console.log('Something!')
   }
 
   ngOnInit(): void {
+    this.showUnless = true;
   }
 
 }
