@@ -1,11 +1,13 @@
-<h3>
-    Details of the user:<br>
-    <br>
-    User ID: {{ user.id }}<br>
-    User Name: {{ user.name }}<br>
-    User email: {{ user.email }}<br>
+<h5>
+    <div *ngIf="user">
+        Details of the user:<br>
+        <br>
+        User ID: {{ user.id }}<br>
+        User Name: {{ user.name }}<br>
+        User email: <a href="{{ user.email | appendor : 'pre': 'mailto://' }}">{{ user.email }}</a><br>
+        User Phone: <a href="{{ user.phone | appendor : 'pre': 'tel://' }}">{{ user.phone | slice:0:-6 }}</a><br>
+    </div>
 
-    UserName: {{ user.username }} <br>
     <hr>
     <button class="btn btn-success" (click)="createUser()">Create User </button>
     <button class="btn btn-primary" (click)="updateUser()">Update User </button>
@@ -15,4 +17,4 @@
     <h4>User's Posts</h4>
     <pre>{{ posts | async | json }}</pre>
 
-</h3>
+</h5>

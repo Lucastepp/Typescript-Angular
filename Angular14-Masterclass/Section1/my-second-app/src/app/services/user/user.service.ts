@@ -30,6 +30,10 @@ export class UserService {
     return this._users;
   }
 
+  addUser(user: IUser) {
+    this._users.push(user);
+  }
+
   getUsersViaREST(): Observable<IUser[]> {
     let headers = new HttpHeaders().set('Authorization', 'Bearer your-access-token-here')
     return this.http.get<IUser[]>(this._rootUrl, { headers: headers })

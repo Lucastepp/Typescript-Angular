@@ -24,6 +24,8 @@ import { UnlessDirective } from './directives/unless/unless.directive';
 import { ParentComponent } from './components/parent/parent.component';
 import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
+import { AppendorPipe } from './pipes/appendor/appendor.pipe';
+import { FilterPipe } from './pipes/filter/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { TwoComponent } from './components/two/two.component';
     UnlessDirective,
     ParentComponent,
     OneComponent,
-    TwoComponent
+    TwoComponent,
+    AppendorPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
