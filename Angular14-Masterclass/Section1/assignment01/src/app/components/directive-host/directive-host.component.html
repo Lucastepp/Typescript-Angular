@@ -1,0 +1,16 @@
+<input type="text" value="Initial Value" [appChangeCase]="'upper'">
+<hr>
+
+<div *ngIf="showUnless">
+    This will show
+</div>
+
+<ng-template [ngIf]="showUnless">
+    <div >
+        This will show
+    </div>
+</ng-template>
+<hr>
+<div *appUnless="false">
+    Unless directive = This will show
+</div>
