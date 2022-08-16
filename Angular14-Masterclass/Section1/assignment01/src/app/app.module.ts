@@ -26,6 +26,7 @@ import { OneComponent } from './components/one/one.component';
 import { TwoComponent } from './components/two/two.component';
 import { AppendorPipe } from './pipes/appendor/appendor.pipe';
 import { FilterPipe } from './pipes/filter/filter.pipe';
+import { NewUserComponent } from './components/new-user/new-user.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
     OneComponent,
     TwoComponent,
     AppendorPipe,
-    FilterPipe
+    FilterPipe,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
