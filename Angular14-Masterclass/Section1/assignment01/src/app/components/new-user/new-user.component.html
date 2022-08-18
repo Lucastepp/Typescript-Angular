@@ -1,54 +1,59 @@
 <div class="container">
     <h3>NEW USER FORM</h3>
     <hr>
-     <form  #userForm="ngForm" (ngSubmit)="submit(userForm)">
+    <form #userForm="ngForm" (ngSubmit)="submit(userForm)">
         <div class="form-group">
             <label for="name">Name</label>
-            <input required minlength="8" maxlength="20" pattern="John Doe" type="text" name="name" class="form-control" ngModel #name="ngModel">
+            <input required minlength="8" maxlength="20"  type="text" name="name" class="form-control"
+                ngModel #name="ngModel">
             <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
                 <p *ngIf="name.errors?.['required']"> Name is required </p>
                 <p *ngIf="name.errors?.['minlength']"> Name must be at least 8 caracters long </p>
                 <p *ngIf="name.errors?.['required']"> Name can be at max 20 caracters long </p>
-                <p *ngIf="name.errors?.['pattern']"> Name must only be John Doe</p>
+                
             </div>
         </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" name="name" class="form-control" ngModel>
-        </div>
+        
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" name="name" class="form-control" ngModel>
+            <input type="text" name="email" class="form-control" ngModel>
         </div>
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text" name="name" class="form-control" ngModel>
+            <input type="text" name="phone" class="form-control" ngModel>
         </div>
         <div class="form-group">
             <label for="website">Website</label>
-            <input type="text" name="name" class="form-control" ngModel>
+            <input type="text" name="website" class="form-control" ngModel>
         </div>
         <hr>
-            <div class="radio">
-                <label for="gender" *ngFor="let gender of genders" >
-                    <input name="gender" [value]="gender" ngModel type="radio"> {{ gender }} <br>
-                </label>
-            </div>
+        <div class="radio">
+            <label for="gender" *ngFor="let gender of genders">
+                <input name="gender" [value]="gender" ngModel type="radio"> {{ gender }} <br>
+            </label>
+        </div>
         <hr>
-            <div class="form-group">
-                <label for="communicationMode">communication Options</label>
-                <select name="communicationMode" class="form-control">
-                    <option value=""></option>
-                    <option *ngFor="let commOpt of communicationsModes" [value]="">  <br> {{ commOpt }}</option>
-                    
-                </select>
-            </div>
-        <pre>
+        <div class="form-group">
+            <label for="communicationMode">communication Options</label>
+            <select name="communicationMode" class="form-control">
+                <option value=""></option>
+                <option *ngFor="let commOpt of communicationsModes" [value]=""> <br> {{ commOpt }}</option>
 
+            </select>
+        </div>
+
+        <hr>
+        <div class="checkbox">
+            <label for="agreement">
+                <input name="agreement" ngModel type="checkbox"> I agree to Terms and Conditions! <br>
+            </label>
+        </div>
+        <hr>
+        <pre>
+            {{ userForm.value | json }}
         </pre>
-        
+
         <hr>
         <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Submit</button>
-    </form> 
+    </form>
 </div>
-
