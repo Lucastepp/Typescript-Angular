@@ -29,9 +29,24 @@
             <input type="text" name="name" class="form-control" ngModel>
         </div>
         <hr>
+            <div class="radio">
+                <label for="gender" *ngFor="let gender of genders" >
+                    <input name="gender" [value]="gender" ngModel type="radio"> {{ gender }} <br>
+                </label>
+            </div>
+        <hr>
+            <div class="form-group">
+                <label for="communicationMode">communication Options</label>
+                <select name="communicationMode" class="form-control">
+                    <option value=""></option>
+                    <option *ngFor="let commOpt of communicationsModes" [value]="">  <br> {{ commOpt }}</option>
+                    
+                </select>
+            </div>
         <pre>
 
         </pre>
+        
         <hr>
         <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Submit</button>
     </form> 
