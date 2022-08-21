@@ -4,7 +4,10 @@
 <hr>
 <button 
 class="btn btn-primary"
-[disabled]="!allowNewServer">Add Server</button>
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button>
+<hr>
+<h3>{{ serverCreationStatus }}</h3>
 <hr>
 <p [innerText]="allowNewServer"></p>
 <hr>
