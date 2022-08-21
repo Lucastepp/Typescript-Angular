@@ -1,5 +1,7 @@
 import { Sticker } from "../decorators/class.decorator";
 
-@Sticker
+@Sticker({
+    stickers: ['GitHub', 'Google', 'Mozilla', 'Angular']
+})
 export class Laptop {
 }
