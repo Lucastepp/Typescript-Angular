@@ -15,7 +15,8 @@
 <!-- <p>{{ serverName }}</p> -->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <hr>
-<h3>{{ serverCreationStatus }}</h3>
+<!-- <h3>{{ serverCreationStatus }}</h3> -->
+<h5 *ngIf="serverCreated">Server was created, server name is {{ serverName }}</h5>
 <hr>
 <p [innerText]="allowNewServer"></p>
 <hr>
