@@ -1,0 +1,17 @@
+<h3>This is the users Component</h3>
+<br>
+<hr>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username"
+    (input)="checkString($event)"> 
+<br>
+<p>{{ username }}</p>
+
+<button
+    class="btn btn-primary"
+    [disabled]="!stringIsNotEmpty"
+    (click)="resetString()">
+    Reset username
+</button>
